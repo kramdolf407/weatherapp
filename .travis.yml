@@ -10,11 +10,10 @@ env:
   COMPOSE_VERSION: 1.4.2
 
 install:
-  - pip3 install requests
+  - pip install requests
 
 script:
   - docker-compose build
   - docker-compose up -d
-  - ./backend/tests/test_request.py
   - ./backend/tests/request_to_backend.py
   - docker-compose down
