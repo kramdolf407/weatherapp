@@ -10,7 +10,7 @@ env:
   COMPOSE_VERSION: 1.4.2
 
 install:
-  - pip install requests
+  - pip3 install requests
 
 script:
   - docker-compose build
