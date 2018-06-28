@@ -14,7 +14,7 @@ install:
 
 script:
   - docker-compose build
-  - docker-compose up
+  - docker-compose up -d
   - ./backend/tests/test_request.py
   - ./backend/tests/request_to_backend.py
   - docker-compose down
