@@ -12,5 +12,6 @@ before_install:
  - sudo mv docker-compose /usr/local/bin
 
 script:
+  - docker-compose pull
   - docker-compose build
   - docker-compose up
