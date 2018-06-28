@@ -6,6 +6,5 @@ env:
   COMPOSE_VERSION: 1.4.2
 
 script:
-  - docker-compose pull
   - docker-compose build
   - docker-compose up
