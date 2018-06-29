@@ -15,7 +15,7 @@ else:
 
 dict1 = json.loads(r.text)
 
-if ('icon1' in dict1.keys()):
+if ('icon' in dict1.keys()):
     print("Icon detected..")
 else:
     print("Icon value was not detected in JSON response. exiting..")
