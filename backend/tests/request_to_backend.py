@@ -8,7 +8,14 @@ if (r.status_code == requests.codes.ok):
     print("Backend site responded with 200 OK")
     print("-------")
 
+else:
+    print("Backend site did NOT respond with 200 OK, exiting..")
+    exit 1
+
 dict1 = json.loads(r.text)
 
-if ('icon' in dict1.keys()):
+if ('icon1' in dict1.keys()):
     print("Icon detected..")
+else:
+    print("Icon value was not detected in JSON response. exiting..")
+    exit 1
