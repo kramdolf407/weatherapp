@@ -10,6 +10,8 @@ if (r.status_code == requests.codes.ok):
 
 dict1 = json.loads(r.text)
 
+print(dict1)
+
 if ('icon' in dict1.keys()):
   print("*******")
   print("Icon detected..")
