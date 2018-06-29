@@ -9,7 +9,6 @@ if (r.status_code == requests.codes.ok):
   print("*******")
 
 print("Do we get content??")
-
 print(r.text)
 
 dict1 = json.loads(r.text)
