@@ -6,11 +6,16 @@ python:
 services:
   - docker
 
+env:
+  COMPOSE_VERSION: 1.4.2
+  APPID:
+
 install:
   - pip install -r requirements.txt
 
 script:
-  - docker build -t backend1 ./backend
-  - docker run -d -p 9000:9000 -e APPID backend1
+  - docker-compose build
+  - docker-compose up -d
   - python3 ./backend/tests/request_to_backend.py
-  - docker stop $(docker ps -a -q)
+  - docker-compose down
+
