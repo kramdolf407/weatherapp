@@ -6,6 +6,9 @@ python:
 services:
   - docker
 
+env:
+  COMPOSE_VERSION: 1.4.2
+
 install:
   - pip install -r requirements.txt
 
