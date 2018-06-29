@@ -5,7 +5,7 @@ services:
     ports:
       - "9000:9000"
     environment: 
-      - APPID:
+      - APPID
 
   frontend:
     build: ./frontend
