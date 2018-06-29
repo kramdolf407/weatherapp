@@ -8,11 +8,7 @@ if (r.status_code == requests.codes.ok):
   print("200 OK")
   print("*******")
 
-print(r.text)
-
-#dict1 = json.loads(r.text)
-
-#print(dict1)
+dict1 = json.loads(r.text)
 
 if ('icon' in dict1.keys()):
   print("*******")
