@@ -1,4 +1,5 @@
-import json import requests
+import json
+import requests
 import sys
 
 r = requests.get('http://localhost:9000/api/weather')
