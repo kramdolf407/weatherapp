@@ -1,8 +1,0 @@
-*** Settings ***
-Library			SeleniumLibrary
-
-*** Test Cases ***
-Visit page
-	Open Browser			http://localhost:9000/api/weather	chrome
-	Capture Page Screenshot
-        Log To Console                  Robot Succeed

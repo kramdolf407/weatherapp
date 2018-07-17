@@ -5,6 +5,7 @@ const baseURL = process.env.ENDPOINT;
 
 const getWeatherFromApi = async () => {
   try {
+    console.log("Trying to fetch from backend..");
     const response = await fetch(`${baseURL}/weather`);
     return response.json();
   } catch (error) {
@@ -25,6 +26,7 @@ class Weather extends React.Component {
 
   async componentWillMount() {
     const weather = await getWeatherFromApi();
+    console.log(typeof weather.icon);
     this.setState({icon: weather.icon.slice(0, -1)});
   }
 
@@ -33,7 +35,7 @@ class Weather extends React.Component {
 
     return (
       <div className="icon">
-        { icon && <img src={`/img/${icon}.svg`} /> }
+        { icon && <img id="current_weather" src={`/img/${icon}.svg`} /> }
       </div>
     );
   }
@@ -41,5 +43,6 @@ class Weather extends React.Component {
 
 ReactDOM.render(
   <Weather />,
-  document.getElementById('app')
-);
+  document.getElementById('app'),
+
+  );

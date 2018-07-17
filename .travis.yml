@@ -9,6 +9,6 @@ env:
 script:
   - docker-compose build
   - docker-compose up -d
-
+  - python ./backend/tests/request_to_backend.py
   - docker-compose down
 

@@ -6,6 +6,8 @@ services:
       - "9000:9000"
     environment: 
       - APPID
+    networks:
+      - net1
 
   frontend:
     build: ./frontend
@@ -13,10 +15,23 @@ services:
       - "8000:8000"
     depends_on:
       - backend
+    environment:
+      - ENDPOINT=http://backend:9000/api
+
+    networks:
+      - net1
 
   robot:
     build: ./robot
+    privileged: true
     ports:
       - "4444:4444"
+    volumes:
+      - ./robot/reports:/tmp/robot
     depends_on:
       - frontend
+    networks:
+      - net1
+
+networks:
+  net1:
